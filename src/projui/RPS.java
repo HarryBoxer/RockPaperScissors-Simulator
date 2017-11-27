@@ -19,18 +19,18 @@ static String bot = "";
 
 	public static void printWin() {
 		System.out.println("You win!");
-                messageAlert("You win!");                
+                messageAlert("Bot Choose : "+bot+ "\n        You win!");                
 	}
 
 	public static void printLose() {
 		System.out.println("You lose!");
-                messageAlert("You lose!");
+                messageAlert("Bot Choose : "+bot+"\n        You lose!");
 
 	}
 
 	public static void main(String[] args) {
             StartMenu startMenu = new StartMenu();
-            startMenu.setVisible(true);//start menu from another class
+            startMenu.setVisible(true);
             runBot();
 	}
         
@@ -68,7 +68,7 @@ static String bot = "";
         public void runChoose(){
             if (choose.equalsIgnoreCase(bot)) {
 				System.out.printf("TIE!%n");
-                                messageAlert("TIE!");
+                                messageAlert("Bot Choose : "+bot+"\n            TIE!");
 
 			} else if (choose.equalsIgnoreCase("Rock")) {
 				if (bot.equals("Scissors"))
@@ -90,7 +90,7 @@ static String bot = "";
 			} else
 				System.out.println("Invalid user input.");
 
-////			String aog = sc.next();
+//			String aog = sc.next();
 //			if (aog.equalsIgnoreCase("Again"))
 //				;
 //			else if (aog.equalsIgnoreCase("Quit")) {
@@ -103,7 +103,7 @@ static String bot = "";
 
         }
         public static void messageAlert(String name){
-            JOptionPane.showMessageDialog(null, name ,"Result", 2);
+            JOptionPane.showMessageDialog(null, name ,"Result!", 2);
             runBot();
         }
         

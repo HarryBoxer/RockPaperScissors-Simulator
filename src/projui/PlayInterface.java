@@ -31,6 +31,7 @@ public class PlayInterface extends javax.swing.JFrame {
         paperButt = new javax.swing.JButton();
         rockButt = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        paperButt1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -42,16 +43,15 @@ public class PlayInterface extends javax.swing.JFrame {
                 scissorsButtActionPerformed(evt);
             }
         });
-        getContentPane().add(scissorsButt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 120, 130));
+        getContentPane().add(scissorsButt, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 130, 120));
 
-        paperButt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/BtnP.png"))); // NOI18N
         paperButt.setBorderPainted(false);
         paperButt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 paperButtActionPerformed(evt);
             }
         });
-        getContentPane().add(paperButt, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 120, 130));
+        getContentPane().add(paperButt, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 90));
 
         rockButt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/btnR.png"))); // NOI18N
         rockButt.setBorderPainted(false);
@@ -60,10 +60,19 @@ public class PlayInterface extends javax.swing.JFrame {
                 rockButtActionPerformed(evt);
             }
         });
-        getContentPane().add(rockButt, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 120, 130));
+        getContentPane().add(rockButt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 120, 130));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/BG3.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/PlayInterface.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 420));
+
+        paperButt1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/BtnP.png"))); // NOI18N
+        paperButt1.setBorderPainted(false);
+        paperButt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                paperButt1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(paperButt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 130, 140));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -75,9 +84,9 @@ public class PlayInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_rockButtActionPerformed
 
     private void paperButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paperButtActionPerformed
-        rps.choose = "paper";
-        System.out.println("you choosing = " +RPS.choose);
-        rps.runChoose();
+        SelectTwo Select = new SelectTwo();
+        Select.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_paperButtActionPerformed
 
     private void scissorsButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scissorsButtActionPerformed
@@ -85,6 +94,12 @@ public class PlayInterface extends javax.swing.JFrame {
         System.out.println("you choosing = " +RPS.choose);
         rps.runChoose();
     }//GEN-LAST:event_scissorsButtActionPerformed
+
+    private void paperButt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paperButt1ActionPerformed
+	rps.choose = "paper";
+        System.out.println("you choosing = " +RPS.choose);
+        rps.runChoose();
+    }//GEN-LAST:event_paperButt1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,6 +139,7 @@ public class PlayInterface extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton paperButt;
+    private javax.swing.JButton paperButt1;
     private javax.swing.JButton rockButt;
     private javax.swing.JButton scissorsButt;
     // End of variables declaration//GEN-END:variables
