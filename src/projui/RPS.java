@@ -8,7 +8,6 @@ public class RPS {
 public static String choose = "";
 static String bot = "";
 	public static void random(int random, String bot) {
-
 		if (random == 1)
 			bot = "Rock";
 		else if (random == 2)
