@@ -2,93 +2,118 @@ package projui;
 
 import java.util.Random;
 import java.util.Scanner;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class RPS {
-public static String choose = "";
-static String bot = "";
-	public static void random(int random, String bot) {
-		if (random == 1)
-			bot = "Rock";
-		else if (random == 2)
-			bot = "Paper";
-		else if (random == 3)
-			bot = "Scissors";
-	}
 
-	public static void printWin() {
-		System.out.println("You win!");
-                messageAlert("Bot Choose : "+bot+ "\n        You win!");                
-	}
+    public static String choose = "";
+    public static int win ;
+    public static int health ;
+    static String bot = "";
 
-	public static void printLose() {
-		System.out.println("You lose!");
-                messageAlert("Bot Choose : "+bot+"\n        You lose!");
+    public static void random(int random, String bot) {
+        if (random == 1) {
+            bot = "Rock";
+        } else if (random == 2) {
+            bot = "Paper";
+        } else if (random == 3) {
+            bot = "Scissors";
+        }
+    }
 
-	}
+    public static void printWin() {
+        System.out.println("You win!");
+        messageAlert("Bot Choose : " + bot + "\n        You win!");
+    }
 
-	public static void main(String[] args) {
-            StartMenu startMenu = new StartMenu();
-            startMenu.setVisible(true);
-            runBot();
-	}
-        
-        
-        public static void runBot(){
+    public static void printLose() {
+        System.out.println("You lose!");
+        messageAlert("Bot Choose : " + bot + "\n        You lose!");
 
-            
-//                PlayInterface playInter = new PlayInterface();
-//                playInter.setVisible(true);
-//		StartMenu startMenu = new StartMenu();
-//                startMenu.setVisible(true);
+    }
 
-		String response;
+    public static void main(String[] args) {
+        StartMenu startMenu = new StartMenu();
+        startMenu.setVisible(true);
+        runBot();
+    }
 
-//		Scanner sc = new Scanner(System.in);
-		Random generator = new Random();
+    public static void runBot() {
+
+//      PlayInterface playInter = new PlayInterface();
+//      playInter.setVisible(true);
+//	StartMenu startMenu = new StartMenu();
+//      startMenu.setVisible(true);
+        String response;
 
 
-			System.out.println("Choose Rock or Paper or Scissors");
-			int random = generator.nextInt(3) + 1;
+        Random generator = new Random();
 
-			if (random == 1)
-				bot = "Rock";
-			else if (random == 2)
-				bot = "Paper";
-			else if (random == 3)
-				bot = "Scissors";
+        System.out.println("Choose Rock or Paper or Scissors");
+        int random = generator.nextInt(3) + 1;
+
+        if (random == 1) {
+            bot = "Rock";
+        } else if (random == 2) {
+            bot = "Paper";
+        } else if (random == 3) {
+            bot = "Scissors";
+        }
 
 //			System.out.print("Choose: ");
 //			choose = sc.next();
+        System.out.printf("Bot: %s%n", bot);
 
-			System.out.printf("Bot: %s%n", bot);
-		
+    }
+
+    public void runChoose() {
+        if (choose.equalsIgnoreCase(bot)) {
+            System.out.printf("TIE!%n");
+            messageAlert("Bot Choose : " + bot + "\n            TIE!");
+
+        } else if (choose.equalsIgnoreCase("Rock")) {
+            if (bot.equals("Scissors")) {
+                printWin();
+                win += 1;
+                if (health < 3)health += 1;
         }
-        public void runChoose(){
-            if (choose.equalsIgnoreCase(bot)) {
-				System.out.printf("TIE!%n");
-                                messageAlert("Bot Choose : "+bot+"\n            TIE!");
+            if (bot.equals("Paper")) {
+                printLose();
+                if (health > 0)health -= 1;
+                    
+            }
 
-			} else if (choose.equalsIgnoreCase("Rock")) {
-				if (bot.equals("Scissors"))
-					printWin();
-				if (bot.equals("Paper"))
-					printLose();
+        } else if (choose.equalsIgnoreCase("Paper")) {
+            if (bot.equals("Rock")) {
+                printWin();
+                win += 1;
+                if (health < 3) 
+                    health += 1;
+                
+            } else if (bot.equals("Scissors")) {
+                printLose();
+                if (health > 0) 
+                    health -= 1;
+                
+            }
 
-			} else if (choose.equalsIgnoreCase("Paper")) {
-				if (bot.equals("Rock"))
-					printWin();
-				else if (bot.equals("Scissors"))
-					printLose();
-
-			} else if (choose.equalsIgnoreCase("Scissors")) {
-				if (bot.equals("Paper"))
-					printWin();
-				else if (bot.equals("Rock"))
-					printLose();
-			} else
-				System.out.println("Invalid user input.");
-
+        } else if (choose.equalsIgnoreCase("Scissors")) {
+            if (bot.equals("Paper")) {
+                printWin();
+                win += 1;
+                if (health < 3) 
+                    health += 1;
+                
+            
+        } else if (bot.equals("Rock")) {
+            printLose();
+            if (health > 0) 
+                health -= 1;
+        }
+      }
+    }
 //			String aog = sc.next();
 //			if (aog.equalsIgnoreCase("Again"))
 //				;
@@ -100,10 +125,11 @@ static String bot = "";
 //				System.out.println();
 //			}
 
-        }
+        
         public static void messageAlert(String name){
+//          JOptionPane.showMessageDialog(null, name, "Result!", win , new ImageIcon("icon.png"));
+//          JOptionPane.showMessageDialog(null, "Hello", "Result!", health, icon );
             JOptionPane.showMessageDialog(null, name ,"Result!", 2);
             runBot();
         }
-        
-}
+        }

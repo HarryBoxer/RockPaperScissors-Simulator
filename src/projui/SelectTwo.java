@@ -5,6 +5,9 @@
  */
 package projui;
 
+import static projui.RPS.health;
+import static projui.RPS.win;
+
 /**
  *
  * @author karn
@@ -35,36 +38,41 @@ public class SelectTwo extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/PlayBtn.png"))); // NOI18N
+        jButton1.setBorderPainted(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, -1, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/HTPBtn.png"))); // NOI18N
+        jButton2.setBorderPainted(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 312, 140, 50));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 140, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/PrePage.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 420));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Save.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 640, 420));
 
-        pack();
+        setSize(new java.awt.Dimension(640, 422));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        win = 0;
+        health = 3;
         PlayInterface playInter = new PlayInterface();
         playInter.setVisible(true);
         this.dispose();
         }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-	Rock SelectPage = new Rock();
-        SelectPage.setVisible(true);
+	Rock howToPlay = new Rock();
+        howToPlay.setVisible(true);
         this.dispose();         }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
