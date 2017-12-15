@@ -7,7 +7,7 @@ package projui;
 
 /**
  *
- * @author karn
+ * @author Sorrawit Tantharatana
  */
 public class Scissors extends javax.swing.JFrame {
 

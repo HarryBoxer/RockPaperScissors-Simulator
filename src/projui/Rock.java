@@ -7,7 +7,7 @@ package projui;
 
 /**
  *
- * @author karn
+ * @author Sorrawit Tantharatana
  */
 public class Rock extends javax.swing.JFrame {
 

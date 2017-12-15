@@ -11,7 +11,7 @@ import static projui.RPS.win;
 
 /**
  *
- * @author karn
+ * @author Sorrawit Tantharatana
  */
 public class SelectTwo extends javax.swing.JFrame {
 

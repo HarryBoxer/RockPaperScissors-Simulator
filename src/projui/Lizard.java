@@ -7,7 +7,7 @@ package projui;
 
 /**
  *
- * @author karn
+ * @author Sorrawit Tantharatana
  */
 public class Lizard extends javax.swing.JFrame {
 

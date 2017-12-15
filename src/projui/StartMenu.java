@@ -7,7 +7,7 @@ package projui;
 
 /**
  *
- * @author karn
+ * @author Sorrawit Tantharatana
  */
 public class StartMenu extends javax.swing.JFrame {
 
