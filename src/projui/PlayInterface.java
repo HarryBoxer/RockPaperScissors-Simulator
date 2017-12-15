@@ -35,6 +35,8 @@ public class PlayInterface extends javax.swing.JFrame {
         scissorsButt = new javax.swing.JButton();
         rockButt = new javax.swing.JButton();
         paperButt1 = new javax.swing.JButton();
+        Spock = new javax.swing.JButton();
+        Lizard = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,10 +45,10 @@ public class PlayInterface extends javax.swing.JFrame {
         ShowWin.setFont(new java.awt.Font("AGBenguiatCyr", 1, 33)); // NOI18N
         ShowWin.setText("WIN : 0");
         ShowWin.setDoubleBuffered(true);
-        getContentPane().add(ShowWin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 170, 70));
+        getContentPane().add(ShowWin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 170, 70));
 
         Health.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Heart03.png"))); // NOI18N
-        getContentPane().add(Health, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 130, 50));
+        getContentPane().add(Health, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 130, 50));
 
         BackBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Door.png"))); // NOI18N
         BackBtn.setBorderPainted(false);
@@ -57,37 +59,50 @@ public class PlayInterface extends javax.swing.JFrame {
         });
         getContentPane().add(BackBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 50));
 
-        scissorsButt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/BtnS.png"))); // NOI18N
         scissorsButt.setBorderPainted(false);
         scissorsButt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 scissorsButtActionPerformed(evt);
             }
         });
-        getContentPane().add(scissorsButt, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 130, 120));
+        getContentPane().add(scissorsButt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 100, 100));
 
-        rockButt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/btnR.png"))); // NOI18N
         rockButt.setBorderPainted(false);
         rockButt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rockButtActionPerformed(evt);
             }
         });
-        getContentPane().add(rockButt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 120, 130));
+        getContentPane().add(rockButt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 90, 100));
 
-        paperButt1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/BtnP.png"))); // NOI18N
         paperButt1.setBorderPainted(false);
         paperButt1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 paperButt1ActionPerformed(evt);
             }
         });
-        getContentPane().add(paperButt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 130, 140));
+        getContentPane().add(paperButt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 100, 100));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/PlayInterface.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 420));
+        Spock.setBorderPainted(false);
+        Spock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SpockActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Spock, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 279, 110, 100));
 
-        setSize(new java.awt.Dimension(650, 442));
+        Lizard.setBorderPainted(false);
+        Lizard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LizardActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Lizard, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 279, 110, 110));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/PlayReal.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 410));
+
+        setSize(new java.awt.Dimension(640, 422));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -125,6 +140,22 @@ public class PlayInterface extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BackBtnActionPerformed
 
+    private void SpockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SpockActionPerformed
+        rps.choose = "spock";
+        System.out.println("you choosing = " + RPS.choose);
+        rps.runChoose();
+        ShowWin.setText("WIN : " + String.valueOf(RPS.win));
+        checkHealth(RPS.health);
+        System.out.print(RPS.health);    }//GEN-LAST:event_SpockActionPerformed
+
+    private void LizardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LizardActionPerformed
+        rps.choose = "lizard";
+        System.out.println("you choosing = " + RPS.choose);
+        rps.runChoose();
+        ShowWin.setText("WIN : " + String.valueOf(RPS.win));
+        checkHealth(RPS.health);
+        System.out.print(RPS.health);    }//GEN-LAST:event_LizardActionPerformed
+
     private void checkHealth(int health) {
         switch (health) {
             case 0:
@@ -140,6 +171,12 @@ public class PlayInterface extends javax.swing.JFrame {
                 Health.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Heart02.png")));
                 break;
             case 3:
+                Health.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Heart03.png")));
+                break;
+            case 4:
+                Health.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Heart03.png")));
+                break;
+            case 5:
                 Health.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Heart03.png")));
                 break;
         }
@@ -177,13 +214,16 @@ public class PlayInterface extends javax.swing.JFrame {
             public void run() {
                 new PlayInterface().setVisible(true);
             }
-        });
-    }
+        }
+    );
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackBtn;
     private javax.swing.JLabel Health;
+    private javax.swing.JButton Lizard;
     private javax.swing.JLabel ShowWin;
+    private javax.swing.JButton Spock;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton paperButt1;
     private javax.swing.JButton rockButt;

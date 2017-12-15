@@ -8,6 +8,7 @@ package projui;
 import static projui.RPS.health;
 import static projui.RPS.win;
 
+
 /**
  *
  * @author karn
@@ -44,7 +45,7 @@ public class SelectTwo extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, -1, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/HTPBtn.png"))); // NOI18N
         jButton2.setBorderPainted(false);
@@ -55,7 +56,7 @@ public class SelectTwo extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 140, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Save.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/HOME.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 640, 420));
 
         setSize(new java.awt.Dimension(640, 422));
@@ -107,8 +108,10 @@ public class SelectTwo extends javax.swing.JFrame {
             public void run() {
                 new SelectTwo().setVisible(true);
             }
-        });
-    }
+        }
+    )
+                ;
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
