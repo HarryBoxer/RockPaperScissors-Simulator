@@ -1,7 +1,7 @@
 # RockPaperScissors-Simulator
 This is repository for the Rock-Paper-Scissors Simulator project. 
 
-# Aauthor
+# Author
 @author Sorrawit Tantharatana
 
 # Motivation
