@@ -7,7 +7,7 @@ This is repository for the Rock-Paper-Scissors Simulator project.
 # Motivation
 I was inspired by the Startrek fans in the series name The Big Bang Theory. They introduce how to play in this link  https://www.youtube.com/watch?v=x5Q6-wMx-K8 
 
-# Hot to play 
+# How to play 
 Play rock paper scissors lizard spock with a bot, or kill time before Game of Thrones comes on.
 
 Scissors cuts Paper.
